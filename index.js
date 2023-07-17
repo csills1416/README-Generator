@@ -49,7 +49,7 @@ const questions = [
                                     "ISC",
                                     "MIT",
                                     "Mozilla",]
-                            }
+                            },
                             {
                                 type: "input",
                                 name: "email",
