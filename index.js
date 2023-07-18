@@ -1,10 +1,5 @@
-// This will be where the README Generator javascript will be.
-
 const inquirer = require("inquirer");
 const fs = require("fs");
-
-// array of questions for user 
-
 
 
 const questions = [
@@ -57,7 +52,47 @@ const questions = [
                               }
 ];
 
-// function to write README file
+function generateReadme(answers) {
+
+    const readmeContent = `
+  # ${answers.title}
+  
+  ## Description
+  ${answers.description}
+  
+  ## Table of Contents
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [Questions](#questions)
+  
+  ## Installation
+  ${answers.installation}
+  
+  ## Usage
+  ${answers.usage}
+  
+  ## License
+  This application is covered under the ${answers.license} license.
+  
+  ## Contributing
+  ${answers.contributing}
+  
+  ## Tests
+  ${answers.tests}
+  
+  ## Questions
+  For any additional questions, please contact:
+  GitHub: [${answers.username}](https://github.com/${answers.username})
+  Email: ${answers.email}
+  `;
+  
+    return readmeContent;
+  }
+
+
 
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
@@ -67,3 +102,15 @@ function writeToFile(fileName, data) {
         console.log("Success!");
     });
 }
+
+function init() {
+    inquirer.prompt(questions).then((data) => {
+        writeToFile("README.md", generateMarkdown(data));
+    });
+}
+
+function generateMarkdown(data) {
+    return generateReadme(data);
+}
+
+init();
