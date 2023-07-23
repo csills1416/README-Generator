@@ -4,6 +4,8 @@
 The README.md Generator is a JavaScript code that generates a professional README.md file for your projects. It saves you time and effort by dynamically creating a README file based on your input.
 
 ![READMEGENERATORSCREENSHOT](https://github.com/csills1416/README-Generator/assets/71670415/4b276c47-541f-4913-9184-32fa36086376)
+## Video Tutorial
+https://www.youtube.com/watch?v=EjDD2Ny-bKg
 
 ## Table of Contents
 - [Installation](#installation)
